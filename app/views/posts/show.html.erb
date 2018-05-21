@@ -1,0 +1,17 @@
+<div>
+
+    <div>
+        <h3><%= @post.title %></h3>
+        <p> Created <%= time_ago_in_words(@post.created_at) %> ago</p>
+        <p><%= @post.content %></p>
+    </div>
+
+    <div>
+        <%= render 'remarks/remark'%>
+    </div>
+
+    <div>
+        <%= render 'remarks/formRemark'%>
+    </div>
+
+</div>

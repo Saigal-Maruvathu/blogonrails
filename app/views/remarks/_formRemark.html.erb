@@ -1,0 +1,19 @@
+
+
+<h4>Add a Comment</h4>
+
+    <%= form_for([@post, @post.remarks.build]) do |f|%>
+
+        </p>
+            <%= f.label :commenter%> <br>
+            <%= f.text_field :commenter%>
+        <p>
+
+        <p>
+            <%= f.label :comment%><br>
+            <%= f.text_area :comment%>
+        </p>
+
+        <%= f.submit%>
+
+    <% end %>

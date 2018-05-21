@@ -1,0 +1,29 @@
+
+<h1>Create a New Post</h1>
+<%= form_for :post, url: posts_path do |f| %>
+
+    <% if @post.errors.any? %>
+
+    <div id="Error_explantion">
+        <h2>
+            <%= pluralize(@post.errors.count, "error")%>
+            Won't save article:
+        </h2>
+          <ul>
+            <%@post.errors.full_messages.each do |msg|%>
+              <li>
+                <%= msg %>
+              </li>
+          </ul>
+            <% end %>
+    <% end %>
+
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %><br>
+  <%= f.text_area :content %>
+
+  <%= f.submit %>
+
+<% end %>

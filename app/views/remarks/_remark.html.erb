@@ -1,0 +1,13 @@
+
+
+<h4>Comments</h4>
+    <% @post.remarks.each do |remark|%>
+
+    <div>
+        <p><strong><%= remark.commenter %></strong></p>
+        <%= remark.comment %>
+    </div>
+
+        <p><%= link_to 'Delete Comment', post_remarks_path(@post, remark), method: :Delete, data: {confirm: 'Are you Sure?'} %></p>
+
+    <%end%>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>thoughtsinsanity</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <nav>
+      <div>
+        <h1>thoughtsinsanity</h1>
+        <h2>we are all mad here!...</h2>
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Posts', posts_path %></li>
+            <li><%= link_to 'New Post', new_post_path%></li>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+    <%= yield %>
+  </body>
+</html>
