@@ -8,6 +8,6 @@
         <%= remark.comment %>
     </div>
 
-        <p><%= link_to 'Delete Comment', post_remarks_path(@post, remark), method: :Delete, data: {confirm: 'Are you Sure?'} %></p>
+        <p><%= link_to 'Delete Comment', post_remark_path(@post, remark), method: :Delete, data: {confirm: 'Are you Sure?'} %></p>
 
     <%end%>
